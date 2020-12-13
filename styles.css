@@ -1,0 +1,10 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
