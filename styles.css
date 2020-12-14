@@ -2,6 +2,8 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5;
+  max-width: 740px;
+  margin: 0 auto;
 }
 nav ul {
   list-style: none;
