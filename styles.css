@@ -6,6 +6,7 @@ body {
   line-height: 1.5;
   max-width: 740px;
   margin: 0 auto;
+  background-image: url("img/pattern_099.gif");
 }
 
 a {
@@ -22,6 +23,14 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+nav a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  background-color: #007eb6;
+  border-radius: 0.5rem;
 }
 
 img {
@@ -31,10 +40,55 @@ img {
 h1,
 h2,
 h3 {
+  line-height: 1;
+  font-size: 1.5rem;
+  color: #007eb6;
   margin: 0;
   font-family: "Arima Madurai", cursive;
 }
 
 h1 {
-  font-size: xx-large;
+  font-size: 3rem;
+  letter-spacing: -1px;
+  color: #78a517;
+}
+
+h2 {
+  color: #78a517;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: #222;
+}
+
+blockquote {
+  color: #007eb6;
+  font-family: "Arima Madurai", cursive;
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+.wrapper {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  background-color: #fff;
+}
+
+header {
+  position: relative;
+  padding-bottom: 8rem;
+}
+
+header img {
+  position: absolute;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transition: all 2s;
+}
+
+.active {
+  opacity: 1;
 }
