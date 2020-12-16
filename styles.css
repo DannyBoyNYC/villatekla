@@ -1,12 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.5;
-  max-width: 740px;
-  margin: 0 auto;
   background-image: url("img/pattern_099.gif");
+}
+
+.wrapper {
+  max-width: 840px;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  background-color: #fff;
+  /* background: rgba(255, 255, 255, 0.6);
+  border: solid 1px rgba(255, 255, 255, 0.8);
+  background-clip: padding-box;
+  backdrop-filter: blur(1px); */
+  margin: 1rem auto 0 auto;
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+nav a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  background-color: #007eb6;
+  border-radius: 0.5rem;
 }
 
 a {
@@ -18,21 +46,6 @@ a:hover {
   text-decoration: underline;
 }
 
-nav ul {
-  padding-left: 0;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-nav a {
-  color: #fff;
-  padding: 0.5rem 0.75rem;
-  background-color: #007eb6;
-  border-radius: 0.5rem;
-}
-
 img {
   width: 100%;
 }
@@ -40,11 +53,12 @@ img {
 h1,
 h2,
 h3 {
+  font-weight: 400;
   line-height: 1;
   font-size: 1.5rem;
   color: #007eb6;
   margin: 0;
-  font-family: "Arima Madurai", cursive;
+  font-family: "Lobster", cursive;
 }
 
 h1 {
@@ -59,27 +73,42 @@ h2 {
   margin-bottom: 1rem;
 }
 
+h3 + p {
+  margin-top: 0.25rem;
+}
+
 p {
   color: #222;
 }
 
 blockquote {
   color: #007eb6;
-  font-family: "Arima Madurai", cursive;
-  font-style: italic;
-  font-size: 1.25rem;
-}
-
-.wrapper {
-  padding: 1rem;
-  border-radius: 0.5rem;
-  margin-top: 1rem;
-  background-color: #fff;
+  font-family: "Lobster", cursive;
+  font-size: 1.5rem;
 }
 
 header {
   position: relative;
-  padding-bottom: 8rem;
+  min-height: 4rem;
+}
+
+/* just until set up the carousel without using position absolute */
+@media (min-width: 460px) {
+  header {
+    min-height: 6rem;
+  }
+}
+
+@media (min-width: 640px) {
+  header {
+    min-height: 8rem;
+  }
+}
+
+@media (min-width: 840px) {
+  header {
+    min-height: 10rem;
+  }
 }
 
 header img {
@@ -91,4 +120,15 @@ header img {
 
 .active {
   opacity: 1;
+}
+
+dl {
+  width: 100%;
+}
+
+dd {
+  margin-left: 0;
+  margin-top: 0.5rem;
+  text-align: left;
+  font-weight: bold;
 }

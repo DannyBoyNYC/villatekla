@@ -1,5 +1,6 @@
 // animation
 const animate = (imgArr) => {
+  if (!imgArr) return;
   const arrLen = imgArr.length;
   let activeImgIndex = 0;
   setInterval(function () {
