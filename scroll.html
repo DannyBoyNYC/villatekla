@@ -5,9 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="scroll.css" />
+    <style>
+      body {
+        margin: 0;
+      }
+      img {
+        width: 100%;
+      }
+      header {
+        /* position: relative; */
+        height: 480px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+      header img {
+        /* position: absolute; */
+        /* border-radius: 0.5rem; */
+        display: block;
+        grid-area: 1 / 1 / 1 / 1;
+        opacity: 0;
+        transition: all 2s;
+        object-fit: cover;
+        /* margin-bottom: 10px; */
+      }
+      .active {
+        opacity: 1;
+      }
+      .temp {
+        width: 90vw;
+        background-color: #fff;
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
-    <div data-scroll-container>
+    <header>
+      <img alt="sunrise" src="img/2020c/800x600/wIMG_1377.jpg" class="active" />
+      <img alt="beach" src="img/2020c/800x600/wIMG_5411.jpg" />
+      <img alt="rocks" src="img/2020c/800x600/wIMG_1543.jpg" />
+      <img alt="sloths" src="img/2020c/800x600/wIMG_2669.jpg" />
+    </header>
+    <div data-scroll-container class="temp">
       <div data-scroll-section>
         <h1 data-scroll>Hey</h1>
         <p data-scroll>👋</p>
@@ -18,11 +59,37 @@
       </div>
     </div>
 
+    <script src="locomotive-scroll.min.js"></script>
     <script>
-      const scroll = new LocomotiveScroll({
-        el: document.querySelector("[data-scroll-container]"),
-        smooth: true,
-      });
+      (function () {
+        var scroll = new LocomotiveScroll({
+          el: document.querySelector("[data-scroll-container]"),
+          smooth: true,
+        });
+      })();
+    </script>
+    <script>
+      // animation
+      const animate = (imgArr) => {
+        if (!imgArr) return;
+        const arrLen = imgArr.length;
+        let activeImgIndex = 0;
+        setInterval(function () {
+          var activeImg = document.querySelector("header img.active");
+          if (imgArr.indexOf(activeImg) === arrLen - 1) {
+            activeImgIndex = 0;
+          } else {
+            activeImgIndex++;
+          }
+          activeImg.classList.remove("active");
+          imgArr[activeImgIndex].classList.add("active");
+        }, 3000);
+      };
+
+      const header = document.querySelector("header");
+      const images = Array.from(header.querySelectorAll("img"));
+
+      animate(images);
     </script>
   </body>
 </html>

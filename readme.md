@@ -12,8 +12,12 @@ See:
 
 https://www.facebook.com/Finca-Los-Mangos-2092539427631744/
 
+https://www.pranarainforestretreat.com/what-we-offer/
+
 Help along the way:
 
 https://stackoverflow.com/questions/44655812/javascript-add-class-to-element-with-interval
 
 https://github.com/locomotivemtl/locomotive-scroll
+
+https://css-tricks.com/how-to-stack-elements-in-css/
