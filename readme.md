@@ -21,3 +21,15 @@ https://stackoverflow.com/questions/44655812/javascript-add-class-to-element-wit
 https://github.com/locomotivemtl/locomotive-scroll
 
 https://css-tricks.com/how-to-stack-elements-in-css/
+
+```
+    <!-- <li>
+        <a
+          href="https://www.airbnb.com/rooms/2970784?s=DbRU"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Villa Tekla on AirBnB
+        </a>
+      </li> -->
+```

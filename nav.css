@@ -1,0 +1,106 @@
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.menu-toggle {
+  color: #fff;
+  margin-right: 1rem;
+  position: fixed;
+  z-index: 901;
+  top: 10px;
+  left: 10px;
+  font-size: 1.75rem;
+  text-shadow: 0px 1px 1px #000;
+}
+
+.main-menu {
+  position: fixed;
+  display: none;
+  /* left: -200px; */
+  top: 0;
+  /* height: 100%; */
+  overflow-x: visible;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 998;
+  background-color: #fff;
+}
+
+.main-menu ul {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-menu li {
+  padding: 1rem 2rem;
+}
+
+.main-menu a {
+  color: #333;
+  padding: 2rem;
+  text-decoration: none;
+  text-shadow: 0px 0px 1px #000;
+}
+
+.main-menu .menu-close {
+  font-size: 1rem;
+  padding: 1.25rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.main-menu:target {
+  display: block;
+  /* left: 0; */
+  /* outline: none; */
+}
+
+.main-menu:target .menu-close {
+  z-index: 2000;
+}
+
+.main-menu:target ul {
+  position: relative;
+  z-index: 1000;
+}
+
+@media (min-width: 800px) {
+  .menu-toggle,
+  .main-menu .menu-close {
+    display: none;
+  }
+  .main-menu {
+    display: block;
+    position: sticky;
+    /* z-index: 1000; */
+    top: 0;
+    width: 100%;
+    padding: 1rem 0 1rem 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .main-menu ul {
+    flex-direction: row;
+    margin: 0;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .main-menu li {
+    padding: 0;
+  }
+  .main-menu a {
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-shadow: 0px 0px 1px #000;
+  }
+}
