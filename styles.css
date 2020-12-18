@@ -32,23 +32,34 @@ h3 {
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
 }
 
-h1.logo {
-  /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+div.logo {
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
+  position: absolute;
+  top: 96px;
+  left: 60px;
+  z-index: 900;
+}
+
+.logo h1 {
   width: 40vw;
-  height: 200px;
   color: #fff;
   text-shadow: 0px 0px 1px #000;
   font-size: 12vw;
   font-weight: normal;
   line-height: 0.9;
-  position: absolute;
-  top: 96px;
-  left: 60px;
-  z-index: 900;
-  /* color: #78a517; */
   letter-spacing: -4px;
+}
+
+.logo h1:first-line {
+  margin-left: 25vw;
+}
+
+.logo span {
+  color: #fff;
+  display: inline-block;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 3vw;
 }
 
 h2 {
@@ -99,4 +110,22 @@ dd {
   margin-top: 0.5rem;
   text-align: left;
   font-weight: bold;
+}
+
+main {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+main img {
+  max-width: 400px;
+  margin-right: 1rem;
+  float: left;
+  clear: both;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
 }
