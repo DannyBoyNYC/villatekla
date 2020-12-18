@@ -1,0 +1,13 @@
+header {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+header img {
+  grid-area: 1 / 1 / 1 / 1;
+  opacity: 0;
+  transition: all 2s;
+}
+header .active {
+  opacity: 1;
+}

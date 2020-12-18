@@ -1,0 +1,41 @@
+div.logo {
+  font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
+  position: absolute;
+  top: 20px;
+  left: 60px;
+  z-index: 900;
+  @media (min-width: $bp-med) {
+    top: 106px;
+  }
+}
+
+.logo h1 {
+  width: 40vw;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 14vw;
+  font-weight: normal;
+  line-height: 0.9;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  @media (min-width: $bp-med) {
+    font-size: 11vw;
+    letter-spacing: -4px;
+  }
+}
+
+h1:first-line {
+  margin-left: 25vw;
+}
+
+.logo span {
+  text-shadow: 1px 1px 1px #000;
+  color: #fff;
+  display: inline-block;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 5vw;
+  @media (min-width: $bp-med) {
+    font-size: 3vw;
+  }
+}

@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-
+html {
+  scroll-behavior: smooth;
+}
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -32,40 +39,11 @@ h3 {
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
 }
 
-div.logo {
-  font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
-  position: absolute;
-  top: 96px;
-  left: 60px;
-  z-index: 900;
-}
-
-.logo h1 {
-  width: 40vw;
-  color: #fff;
-  text-shadow: 0px 0px 1px #000;
-  font-size: 12vw;
-  font-weight: normal;
-  line-height: 0.9;
-  letter-spacing: -4px;
-}
-
-.logo h1:first-line {
-  margin-left: 25vw;
-}
-
-.logo span {
-  color: #fff;
-  display: inline-block;
-  font-style: italic;
-  letter-spacing: 2px;
-  font-size: 3vw;
-}
-
 h2 {
   color: #78a517;
   font-size: 2rem;
   margin-bottom: 1rem;
+  scroll-margin-top: 4rem;
 }
 
 h3 + p {
@@ -81,20 +59,6 @@ blockquote {
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
   font-style: italic;
   font-size: 1.5rem;
-}
-
-header {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-}
-header img {
-  grid-area: 1 / 1 / 1 / 1;
-  opacity: 0;
-  transition: all 2s;
-}
-header .active {
-  opacity: 1;
 }
 
 .active {

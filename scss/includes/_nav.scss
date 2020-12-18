@@ -38,6 +38,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
+  height: 100vh;
 }
 
 .main-menu li {
@@ -74,15 +75,14 @@
   z-index: 1000;
 }
 
-@media (min-width: 800px) {
+@media (min-width: $bp-med) {
   .menu-toggle,
   .main-menu .menu-close {
     display: none;
   }
   .main-menu {
     display: block;
-    position: sticky;
-    /* z-index: 1000; */
+    // position: sticky;
     top: 0;
     width: 100%;
     padding: 1rem 0 1rem 0;
@@ -93,6 +93,7 @@
     margin: 0;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: auto;
   }
   .main-menu li {
     padding: 0;
