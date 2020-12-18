@@ -16,7 +16,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #007eb6;
+  color: $blue;
 }
 
 a:hover {
@@ -33,15 +33,17 @@ h3 {
   font-weight: 400;
   line-height: 1;
   font-size: 1.5rem;
-  color: #007eb6;
+  color: $blue;
   margin-bottom: 1rem;
   margin-top: 2rem;
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
 }
 
 h2 {
-  color: #78a517;
+  color: $green;
   font-size: 2rem;
+  font-style: italic;
+  letter-spacing: -1px;
   margin-bottom: 1rem;
   scroll-margin-top: 4rem;
 }
@@ -54,8 +56,12 @@ p {
   color: #222;
 }
 
+ul {
+  padding-left: 0;
+}
+
 blockquote {
-  color: #007eb6;
+  color: $blue;
   font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
   font-style: italic;
   font-size: 1.5rem;
@@ -74,18 +80,6 @@ dd {
   margin-top: 0.5rem;
   text-align: left;
   font-weight: bold;
-}
-
-main {
-  max-width: 80vw;
-  margin: 0 auto;
-}
-
-main img {
-  max-width: 400px;
-  margin-right: 1rem;
-  float: left;
-  clear: both;
 }
 
 .clearfix::after {

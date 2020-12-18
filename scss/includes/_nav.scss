@@ -87,10 +87,12 @@
     width: 100%;
     padding: 1rem 0 1rem 0;
     background-color: rgba(0, 0, 0, 0.5);
+    // filter: blur(1);
   }
   .main-menu ul {
     flex-direction: row;
-    margin: 0;
+    max-width: $bp-large;
+    margin: 0 auto;
     justify-content: space-around;
     flex-wrap: wrap;
     height: auto;

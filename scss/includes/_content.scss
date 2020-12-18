@@ -1,0 +1,15 @@
+main {
+  width: 90vw;
+  max-width: 860px;
+  margin: 0 auto;
+  @media (min-width: $bp-med) {
+    width: 80vw;
+  }
+}
+
+main img {
+  max-width: 400px;
+  margin-right: 1rem;
+  float: left;
+  clear: both;
+}
