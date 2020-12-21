@@ -1,5 +1,5 @@
 main {
-  width: 90vw;
+  width: 87vw;
   max-width: 860px;
   margin: 0 auto;
   @media (min-width: $bp-med) {
@@ -9,7 +9,25 @@ main {
 
 main img {
   max-width: 400px;
-  margin-right: 1rem;
-  float: left;
+}
+
+// .hint.imagined {
+//   display: flex;
+//   gap: 3rem;
+//   h3 {
+//     margin-top: 0;
+//   }
+// }
+
+.clearfix::after {
+  content: "";
   clear: both;
+  display: table;
+}
+
+.videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-content: space-around;
 }
