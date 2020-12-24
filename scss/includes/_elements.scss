@@ -1,14 +1,15 @@
 html {
   scroll-behavior: smooth;
 }
+
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 }
+
 body {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: $body-text;
   line-height: 1.5;
   margin: 0;
 }
@@ -35,13 +36,12 @@ h3 {
   color: $blue;
   margin-bottom: 1rem;
   margin-top: 2rem;
-  font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
+  font-family: $serif;
 }
 
 h2 {
   color: $green;
   font-size: 2rem;
-  // font-style: italic;
   font-weight: bold;
   letter-spacing: -1px;
   margin-bottom: 1rem;

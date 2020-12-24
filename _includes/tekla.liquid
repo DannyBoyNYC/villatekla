@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6YX6J1R7ZH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-6YX6J1R7ZH");
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Villa Tekla</title>
+    <script src="https://kit.fontawesome.com/fb7f6f30e4.js"></script>
+    <link rel="stylesheet" href="/css/styles.min.css" />
+  </head>
+  <body>
+    <a
+      href="#main-menu"
+      id="main-menu-toggle"
+      class="menu-toggle"
+      aria-label="Open main menu"
+    >
+      <span class="sr-only">Open main menu</span>
+      <span class="fa fa-bars" aria-hidden="true"></span>
+    </a>
+
+    <nav id="main-menu" class="main-menu" aria-label="Main menu">
+      <a
+        href="#main-menu-toggle"
+        id="main-menu-close"
+        class="menu-close"
+        aria-label="Close main menu"
+      >
+        <span class="sr-only">Close main menu</span>
+        <span class="fa fa-close" aria-hidden="true"></span>
+      </a>
+
+      <ul>
+        <li>
+          <a href="/">Villa Tekla</a>
+        </li>
+
+        <li>
+          <a href="/pages/hints/">Helpful Hints</a>
+        </li>
+        <li>
+          <a href="/pages/directions/">Directions</a>
+        </li>
+        <li>
+          <a href="/pages/activities/">Activities</a>
+        </li>
+        <li>
+          <a href="#contact">Contact Us</a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/villa.tekla/photos"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <a href="#main-menu-toggle" class="backdrop" tabindex="-1" hidden></a>
+
+    <div class="logo">
+      <h1>Villa Tekla</h1>
+      <span class="sub">rainforest retreat</span>
+      <span class="sub-two">manuel antonio • costa rica</span>
+    </div>
+
+    <div style="background-color: #111">
+      <header>
+        <img alt="sunrise" src="/img/anim/1.jpg" class="active" />
+        <img alt="beach" src="/img/anim/2.jpg" />
+        <img alt="rocks" src="/img/anim/3.jpg" />
+        <img alt="sloths" src="/img/anim/4.jpg" />
+      </header>
+    </div>
+
+    <main>
+      {{ content }}
+      <div class="contact">
+        <h2 id="contact">Contact Us</h2>
+        <p>
+          Villa Tekla is owned by the family of the Canadian novelist
+          <a href="http://www.deverell.com" target="_blank" rel="noreferrer"
+            >William Deverell</a
+          >
+          and is named in honor of his late wife Tekla. Daniel and Tamara
+          Deverell manage the property from Brooklyn NY and Toronto Canada
+          (respectively) when it is not in use by the family and maintain
+          listings on
+          <a
+            href="https://www.airbnb.com/rooms/2970784"
+            target="_blank"
+            rel="noreferrer"
+            >AirBnB</a
+          >
+          and
+          <a target="_blank" rel="noreferrer" href="http://www.vrbo.com/78616"
+            >VRBO</a
+          >.
+        </p>
+
+        <p>
+          For rental enquiries please contact Daniel Deverell in the US or
+          Tamara Deverell in Canada.
+        </p>
+
+        <dl>
+          <dd>US</dd>
+          <dt>daniel.deverell@gmail.com</dt>
+          <dt>+1 917 865-5517</dt>
+          <dd>Canada</dd>
+          <dt>devdes@sympatico.ca</dt>
+        </dl>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="/js/scripts.js"></script>
+  </body>
+</html>
