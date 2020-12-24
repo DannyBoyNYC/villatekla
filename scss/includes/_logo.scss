@@ -1,6 +1,5 @@
 div.logo {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text",
-    "Times New Roman", serif;
+  font-family: $fancy-serif;
   position: absolute;
   top: 40px;
   left: 80px;
@@ -8,6 +7,9 @@ div.logo {
   @media (min-width: $bp-med) {
     top: 160px;
     left: 80px;
+  }
+  @media (min-width: $bp-large) {
+    left: 180px;
   }
 }
 

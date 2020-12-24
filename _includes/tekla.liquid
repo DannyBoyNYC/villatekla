@@ -17,7 +17,7 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Villa Tekla</title>
+    <title>Villa Tekla - {{ pageTitle }}</title>
     <script src="https://kit.fontawesome.com/fb7f6f30e4.js"></script>
     <link rel="stylesheet" href="/css/styles.min.css" />
   </head>
@@ -80,12 +80,45 @@
     </div>
 
     <div style="background-color: #111">
+      {%- if pageTitle == "Home" %}
       <header>
         <img alt="sunrise" src="/img/anim/1.jpg" class="active" />
         <img alt="beach" src="/img/anim/2.jpg" />
         <img alt="rocks" src="/img/anim/3.jpg" />
         <img alt="sloths" src="/img/anim/4.jpg" />
+        <img alt="sloths" src="/img/anim/5.jpg" />
+        <img alt="sloths" src="/img/anim/6.jpg" />
+        <img alt="sloths" src="/img/anim/0.jpg" />
       </header>
+      {%- endif %}
+      {%- if pageTitle == "Hints" %}
+      <header>
+        <img alt="sunrise" src="/img/anim-hints/1.jpg" class="active" />
+        <img alt="beach" src="/img/anim-hints/2.jpg" />
+        <img alt="rocks" src="/img/anim-hints/3.jpg" />
+        <img alt="sloths" src="/img/anim-hints/4.jpg" />
+        <img alt="sloths" src="/img/anim-hints/5.jpg" />
+      </header>
+      {%- endif %}
+      {%- if pageTitle == "Directions" %}
+      <header>
+        <img alt="sunrise" src="/img/anim-directions/1.jpg" class="active" />
+        <img alt="beach" src="/img/anim-directions/2.jpg" />
+        <img alt="rocks" src="/img/anim-directions/3.jpg" />
+        <img alt="sloths" src="/img/anim-directions/4.jpg" />
+        <img alt="sloths" src="/img/anim-directions/5.jpg" />
+        <img alt="sloths" src="/img/anim-directions/6.jpg" />
+      </header>
+      {%- endif %}
+      {%- if pageTitle == "Activities" %}
+      <header>
+        <img alt="sunrise" src="/img/anim-activities/1.jpg" class="active" />
+        <img alt="beach" src="/img/anim-activities/2.jpg" />
+        <img alt="rocks" src="/img/anim-activities/3.jpg" />
+        <img alt="sloths" src="/img/anim-activities/4.jpg" />
+        <img alt="sloths" src="/img/anim-activities/5.jpg" />
+      </header>
+      {%- endif %}
     </div>
 
     <main>
