@@ -35,4 +35,8 @@ main img {
   flex-wrap: wrap;
   gap: 2rem;
   align-content: space-around;
+  iframe {
+    width: 100%;
+    height: 500px;
+  }
 }

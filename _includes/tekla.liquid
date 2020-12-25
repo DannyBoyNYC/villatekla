@@ -45,17 +45,17 @@
 
       <ul>
         <li>
-          <a href="/">Villa Tekla</a>
+          <a href="/" {%- if pageTitle == "Home" %}class="active"{%- endif %}>Villa Tekla</a>
         </li>
 
         <li>
-          <a href="/pages/hints/">Helpful Hints</a>
+          <a href="/pages/hints/" {%- if pageTitle == "Hints" %}class="active"{%- endif %}>Helpful Hints</a>
         </li>
         <li>
-          <a href="/pages/directions/">Directions</a>
+          <a href="/pages/directions/" {%- if pageTitle == "Directions" %}class="active"{%- endif %}>Directions </a>
         </li>
         <li>
-          <a href="/pages/activities/">Activities</a>
+          <a href="/pages/activities/" {%- if pageTitle == "Activities" %}class="active"{%- endif %}>Activities</a>
         </li>
         <li>
           <a href="#contact">Contact Us</a>
