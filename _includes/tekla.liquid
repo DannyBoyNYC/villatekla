@@ -79,7 +79,7 @@
       <span class="sub-two">manuel antonio • costa rica</span>
     </div>
 
-    <div style="background-color: #111">
+    <div class="animation-container">
       {%- if pageTitle == "Home" %}
       <header>
         <img alt="sunrise" src="/img/anim/1.jpg" class="active" />
@@ -90,8 +90,7 @@
         <img alt="sloths" src="/img/anim/6.jpg" />
         <img alt="sloths" src="/img/anim/0.jpg" />
       </header>
-      {%- endif %}
-      {%- if pageTitle == "Hints" %}
+      {%- endif %} {%- if pageTitle == "Hints" %}
       <header>
         <img alt="sunrise" src="/img/anim-hints/1.jpg" class="active" />
         <img alt="beach" src="/img/anim-hints/2.jpg" />
@@ -99,18 +98,16 @@
         <img alt="sloths" src="/img/anim-hints/4.jpg" />
         <img alt="sloths" src="/img/anim-hints/5.jpg" />
       </header>
-      {%- endif %}
-      {%- if pageTitle == "Directions" %}
+      {%- endif %} {%- if pageTitle == "Directions" %}
       <header>
         <img alt="sunrise" src="/img/anim-directions/1.jpg" class="active" />
-        <img alt="beach" src="/img/anim-directions/2.jpg" />
-        <img alt="rocks" src="/img/anim-directions/3.jpg" />
+        <!-- <img alt="beach" src="/img/anim-directions/2.jpg" /> -->
+        <!-- <img alt="rocks" src="/img/anim-directions/3.jpg" /> -->
         <img alt="sloths" src="/img/anim-directions/4.jpg" />
         <img alt="sloths" src="/img/anim-directions/5.jpg" />
         <img alt="sloths" src="/img/anim-directions/6.jpg" />
       </header>
-      {%- endif %}
-      {%- if pageTitle == "Activities" %}
+      {%- endif %} {%- if pageTitle == "Activities" %}
       <header>
         <img alt="sunrise" src="/img/anim-activities/1.jpg" class="active" />
         <img alt="beach" src="/img/anim-activities/2.jpg" />
@@ -158,6 +155,21 @@
           <dd>Canada</dd>
           <dt>devdes@sympatico.ca</dt>
         </dl>
+
+        <form class="contact" name="contact" method="POST" data-netlify="true">
+          <p>
+            <label>Name <input type="text" name="name" /></label>
+          </p>
+          <p>
+            <label>Email <input type="email" name="email" /></label>
+          </p>
+          <p>
+            <label>Message <textarea name="message"></textarea></label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
       </div>
     </main>
     <footer></footer>

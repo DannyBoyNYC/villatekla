@@ -8,16 +8,21 @@ main {
 }
 
 main img {
-  max-width: 400px;
+  max-width: 300px;
+  padding: 12px;
+  border-radius: 12px;
+  @media (min-width: $bp-med) {
+    float: right;
+    max-width: 300px;
+    padding: 12px;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+  }
 }
 
-// .hint.imagined {
-//   display: flex;
-//   gap: 3rem;
-//   h3 {
-//     margin-top: 0;
-//   }
-// }
+.animation-container {
+  background-color: #111;
+}
 
 .clearfix::after {
   content: "";

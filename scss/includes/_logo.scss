@@ -1,7 +1,7 @@
 div.logo {
   font-family: $fancy-serif;
   position: absolute;
-  top: 40px;
+  top: 44px;
   left: 80px;
   z-index: 900;
   @media (min-width: $bp-med) {
@@ -9,14 +9,17 @@ div.logo {
     left: 80px;
   }
   @media (min-width: $bp-large) {
-    left: 180px;
+    left: 200px;
+  }
+  @media (min-width: $bp-xlarge) {
+    left: 280px;
   }
 }
 
 .logo h1 {
   width: 40vw;
   color: #fff;
-  text-shadow: 1px 1px 1px #000;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   font-size: 14vw;
   font-weight: normal;
   line-height: 0.8;
@@ -26,6 +29,10 @@ div.logo {
     font-size: 11vw;
     letter-spacing: -4px;
     line-height: 0.8;
+  }
+  @media (min-width: $bp-med) {
+    font-size: 10vw;
+    letter-spacing: -5px;
   }
 }
 
