@@ -1,29 +1,32 @@
-/**
- * variables
- */
-
-const faves = [];
-
-/**
- * create map
- */
+import { maFeatures } from './ma-features.js';
 
 mapboxgl.accessToken =
-  "pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg";
-var map = new mapboxgl.Map({
-  container: "map",
-  style: "mapbox://styles/mapbox/satellite-streets-v11",
-  center: [-84.15285, 9.41126],
-  zoom: 15,
-});
-
+  'pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg';
 /**
  * load data
  */
-const dataCall = (loadData = async () => {
-  const response = await fetch("/js/ma-features.json");
-  const data = await response.json();
-  return data;
+// const dataCall = (loadData = async () => {
+//   const response = await fetch('/js/ma-features.json');
+//   const data = await response.json();
+//   return data;
+// });
+
+const map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/satellite-streets-v11',
+  center: [-84.15285, 9.41126],
+  zoom: 15,
+  bearing: 12,
+  pitch: 48,
+});
+
+map.on('load', function () {
+  map.addSource('dem', {
+    type: 'raster-dem',
+    url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
+  });
+  map.setTerrain({ source: 'dem', exaggeration: 1.0 });
+  map.addMarkers(maFeatures);
 });
 
 /**
@@ -31,19 +34,19 @@ const dataCall = (loadData = async () => {
  * @param {mapbox api} mapboxGl
  * @param {curr map} map
  */
-function initializeMap(mapboxGl, map) {
-  map.addControl(new mapboxGl.NavigationControl(), "bottom-right");
-}
+// function initializeMap(mapboxGl, map) {
+//   map.addControl(new mapboxGl.NavigationControl(), 'bottom-right');
+// }
 
 /**
  *
  * @param {curr map} map
  * @param {data from api} data
  */
-function addMarkers(map, data) {
-  data.features.forEach(function (marker) {
-    var el = document.createElement("div");
-    el.className = "marker";
+function addMarkers(map, maFeatures) {
+  maFeatures.features.forEach(function (marker) {
+    var el = document.createElement('div');
+    el.className = 'marker';
     new mapboxgl.Marker(el)
       .setLngLat(marker.geometry.coordinates)
       .setPopup(
@@ -51,56 +54,20 @@ function addMarkers(map, data) {
           `<h3>${marker.properties.name}</h3>
           <p>${marker.properties.long_description}</p>
           <button>Add</button>
-          `
-        )
+          `,
+        ),
       )
       .addTo(map);
   });
 }
 
-function setFave(fave) {
-  faves.push(fave);
-}
-
-dataCall().then((data) => {
-  addMarkers(map, data);
+dataCall().then((maFeatures) => {
+  createMap(maFeatures);
+  addMarkers(map, maFeatures);
+  /* Assign a unique ID to each store */
+  maFeatures.features.forEach(function (store, i) {
+    store.properties.id = i;
+  });
 });
 
-initializeMap(mapboxgl, map, setFave);
-
-//  LAYERS
-
-// function addLayer(map, data) {
-// map.addLayer({
-//   id: "ma-layer",
-//   type: "circle",
-//   source: "ma-source",
-//   paint: {
-//     "circle-color": "rgb(230, 30, 30)",
-//     "circle-radius": 8,
-//     "circle-stroke-width": 2,
-//     "circle-stroke-color": "#fff",
-//   },
-// });
-// }
-
-// function initializeMap(
-//   mapboxGl,
-//   map
-// , setFave
-// ) {
-// map.addControl(new mapboxGl.NavigationControl(), "bottom-right");
-// map.on("click", "ma-layer", (event) => {
-//   const tooltipEl = new mapboxgl.Popup({ focusAfterOpen: false, offset: 8 });
-//   const features = event.features[0];
-//   const coordinates = features.geometry.coordinates.slice();
-
-//   const tooltipNode = document.createElement("div");
-//   ReactDOM.render(
-//     <Tooltip properties={features.properties} setFave={setFave} />,
-//     tooltipNode
-//   );
-
-//   tooltipEl.setLngLat(coordinates).setDOMContent(tooltipNode).addTo(map);
-// });
-// }
+// initializeMap(mapboxgl, map);
