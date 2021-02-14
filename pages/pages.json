@@ -1,4 +1,4 @@
 {
-  "layout": "tekla.liquid",
+  "layout": "layouts/tekla.njk",
   "tags": ["pages"]
 }
