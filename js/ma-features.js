@@ -20,16 +20,15 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
-        name: "Quepos",
-        short_description:
-          "The town of Quepos is a former banana shipping port.",
+        name: "Quepos Farmer's Market",
+        short_description: "Local produce and prepared foods.",
         long_description:
-          "The commercial center of the area. Good for grocery shopping (especially seafood) as its considerably cheaper here. Worth exploring.",
+          "Open Friday evening and all day Saturday, the farmers market is a fresher and cheaper alternative to Manuel Antonio's shopping.",
         picture: "quepos.jpg",
       },
       geometry: {
         type: "Point",
-        coordinates: [-84.16258, 9.43118],
+        coordinates: [-84.16517, 9.42969],
       },
     },
 
