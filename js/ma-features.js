@@ -144,7 +144,7 @@ const maFeatures = {
       properties: {
         url: "http://nauyacawaterfallscostarica.com",
         name: "Nauyaca Waterfalls",
-        short_description: "Lovely of falls with swimming and diving.",
+        short_description: "Lovely falls with swimming and diving.",
         long_description:
           "Owned by a Costa Rican family that has maintained the land’s beauty without compromising its natural importance as part of the Rio Barucito. For individuals seeking the tranquility of nature as well as those looking for adventure!",
         picture: "nauyaca.jpg",
@@ -172,5 +172,3 @@ const maFeatures = {
     },
   ],
 };
-
-// Rainmaker/@9.505728,-84.2227095,13z/data=!4m8!1m2!2m1!1srainmaker+manuel+antonio!3m4!1s0x8fa10bdb04027b8f:0x1645e3ce90e18b8c!8m2!3d9.5773362!4d-84.2142981
