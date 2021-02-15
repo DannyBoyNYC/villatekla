@@ -1,12 +1,5 @@
-#map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
 .marker {
-  background-image: url("mapbox-icon.png");
+  background-image: url("vt-icon.png");
   background-size: cover;
   width: 30px;
   height: 30px;
@@ -14,11 +7,144 @@
   cursor: pointer;
 }
 
-.mapboxgl-popup {
-  max-width: 200px;
+// .mapboxgl-popup {
+//   max-width: 200px;
+// }
+
+// .mapboxgl-popup-content {
+//   text-align: center;
+//   font-family: "Open Sans", sans-serif;
+// }
+#map {
+  position: absolute;
+  left: 33.3333%;
+  width: 66.6666%;
+  top: 0;
+  bottom: 0;
+  @media (min-width: $bp-med) {
+    width: 100%;
+    left: 0;
+  }
+}
+
+.sidebar {
+  background-color: rgba(240, 240, 240, 0.9);
+  position: absolute;
+  width: 33.3333%;
+  height: 90%;
+  top: 3rem;
+  left: 0;
+  overflow: hidden;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  @media (min-width: $bp-med) {
+    position: absolute;
+    top: 5rem;
+    bottom: 0;
+    left: 1rem;
+    width: 30vw;
+    height: calc(100vh - 8rem);
+    border-radius: 0.25rem;
+  }
+}
+
+.heading {
+  border-bottom: 1px solid #bbb;
+  height: 72px;
+  line-height: 60px;
+  padding: 0 10px;
+  h1 {
+    font-size: 2rem;
+    margin-top: 8px;
+    line-height: 1;
+  }
+}
+
+.listings {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 60px;
+}
+
+.listings .item {
+  display: block;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.listings .item:last-child {
+  border-bottom: none;
+}
+
+.listings .item .title {
+  display: block;
+  color: $green;
+  font-weight: 700;
+}
+
+.listings .item .title:hover {
+  text-decoration: underline;
+}
+
+.listings .item.active {
+  background-color: #f3f3f3;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-left: 0;
+  // background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $green;
+  border-radius: 0;
+}
+
+.clearfix {
+  display: block;
+}
+
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* Marker tweaks */
+.mapboxgl-popup-close-button {
+  display: none;
 }
 
 .mapboxgl-popup-content {
-  text-align: center;
-  font-family: "Open Sans", sans-serif;
+  padding: 0;
+  width: 240px;
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
+}
+
+.mapboxgl-popup-content h3 {
+  color: $green;
+  margin: 0;
+  display: block;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 1rem;
+  margin-bottom: 0;
 }

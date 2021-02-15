@@ -16,13 +16,18 @@
   <body>
 
     {% include "navigation.njk" %}
-    <div id="map"></div>
 
-    <main>
-      {{ content | safe }}
-    </main>
+    <div id="map" class="map"></div>
+        <div class="sidebar">
+      <div class="heading">
+        <h1>
+          Villa Tekla <br /> Insiders Guide
+        </h1>
+      </div>
+      <div id="listings" class="listings"></div>
+    </div>
 
-    <script src="/js/mapbox.js"></script>
+    <script src="/js/mapbox.js" type="module"></script>
 
   </body>
 </html>

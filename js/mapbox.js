@@ -1,106 +1,134 @@
-/**
- * variables
- */
+import { maFeatures } from "./ma-features.js";
 
-const faves = [];
+mapboxgl.accessToken =
+  "pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg";
+
+/* Assign a unique ID to each store */
+maFeatures.features.forEach(function (feature, i) {
+  feature.properties.id = i;
+});
 
 /**
  * create map
  */
-
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg";
-var map = new mapboxgl.Map({
+const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/satellite-streets-v11",
-  center: [-84.15285, 9.41126],
-  zoom: 15,
+  center: [-84.16378, 9.41126],
+  zoom: 13,
+  scrollZoom: false,
 });
 
-/**
- * load data
- */
-const dataCall = (loadData = async () => {
-  const response = await fetch("/js/ma-features.json");
-  const data = await response.json();
-  return data;
-});
-
-/**
- *
- * @param {mapbox api} mapboxGl
- * @param {curr map} map
- */
-function initializeMap(mapboxGl, map) {
-  map.addControl(new mapboxGl.NavigationControl(), "bottom-right");
-}
-
-/**
- *
- * @param {curr map} map
- * @param {data from api} data
- */
-function addMarkers(map, data) {
-  data.features.forEach(function (marker) {
-    var el = document.createElement("div");
-    el.className = "marker";
-    new mapboxgl.Marker(el)
-      .setLngLat(marker.geometry.coordinates)
-      .setPopup(
-        new mapboxgl.Popup({ focusAfterOpen: false, offset: 8 }).setHTML(
-          `<h3>${marker.properties.name}</h3>
-          <p>${marker.properties.long_description}</p>
-          <button>Add</button>
-          `
-        )
-      )
-      .addTo(map);
+map.on("load", () => {
+  map.addSource("places", {
+    type: "geojson",
+    data: maFeatures,
   });
-}
-
-function setFave(fave) {
-  faves.push(fave);
-}
-
-dataCall().then((data) => {
-  addMarkers(map, data);
+  map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+  buildLocationList(maFeatures);
+  addMarkers();
 });
 
-initializeMap(mapboxgl, map, setFave);
+const addMarkers = () => {
+  maFeatures.features.forEach(function (marker) {
+    /* Create a div element for the marker. */
+    const el = document.createElement("div");
+    /* Assign a unique `id` to the marker. */
+    el.id = "marker-" + marker.properties.id;
+    /* Assign the `marker` class to each marker for styling. */
+    el.className = "marker";
 
-//  LAYERS
+    /**
+     * Create a marker using the div element
+     * defined above and add it to the map.
+     **/
+    new mapboxgl.Marker(el, {
+      // offset: [0, -23]
+    })
+      .setLngLat(marker.geometry.coordinates)
+      .addTo(map);
 
-// function addLayer(map, data) {
-// map.addLayer({
-//   id: "ma-layer",
-//   type: "circle",
-//   source: "ma-source",
-//   paint: {
-//     "circle-color": "rgb(230, 30, 30)",
-//     "circle-radius": 8,
-//     "circle-stroke-width": 2,
-//     "circle-stroke-color": "#fff",
-//   },
-// });
-// }
+    el.addEventListener("click", function (e) {
+      /* Fly to the point */
+      flyToFeature(marker);
+      /* Close all other popups and display popup for clicked feature */
+      createPopUp(marker);
+      /* Highlight listing in sidebar */
+      var activeItem = document.getElementsByClassName("active");
+      e.stopPropagation();
+      if (activeItem[0]) {
+        activeItem[0].classList.remove("active");
+      }
+      var listing = document.getElementById("listing-" + marker.properties.id);
+      listing.classList.add("active");
+    });
+  });
+};
 
-// function initializeMap(
-//   mapboxGl,
-//   map
-// , setFave
-// ) {
-// map.addControl(new mapboxGl.NavigationControl(), "bottom-right");
-// map.on("click", "ma-layer", (event) => {
-//   const tooltipEl = new mapboxgl.Popup({ focusAfterOpen: false, offset: 8 });
-//   const features = event.features[0];
-//   const coordinates = features.geometry.coordinates.slice();
+const buildLocationList = (data) => {
+  data.features.forEach((feature, i) => {
+    const prop = feature.properties;
+    /* Add a new listing section to the sidebar. */
+    const listings = document.getElementById("listings");
+    const listing = listings.appendChild(document.createElement("div"));
+    /* Assign a unique `id` to the listing. */
+    listing.id = "listing-" + data.features[i].properties.id;
+    /* Assign the `item` class to each listing for styling. */
+    listing.className = "item";
 
-//   const tooltipNode = document.createElement("div");
-//   ReactDOM.render(
-//     <Tooltip properties={features.properties} setFave={setFave} />,
-//     tooltipNode
-//   );
+    /* Add the link to the individual listing created above. */
+    let link = listing.appendChild(document.createElement("a"));
+    link.href = "#";
+    link.className = "title";
+    link.id = "link-" + prop.id;
+    link.innerHTML = prop.name;
 
-//   tooltipEl.setLngLat(coordinates).setDOMContent(tooltipNode).addTo(map);
-// });
-// }
+    /* Add details to the individual listing. */
+    var details = listing.appendChild(document.createElement("div"));
+    details.innerHTML = prop.long_description;
+    if (prop.url) {
+      details.innerHTML += ` - <a href=${prop.url}>${prop.name}</a>`;
+    }
+    link.addEventListener("click", function (e) {
+      for (var i = 0; i < data.features.length; i++) {
+        if (this.id === "link-" + data.features[i].properties.id) {
+          var clickedListing = data.features[i];
+          flyToFeature(clickedListing);
+          createPopUp(clickedListing);
+        }
+      }
+      const activeItem = document.getElementsByClassName("active");
+      if (activeItem[0]) {
+        activeItem[0].classList.remove("active");
+      }
+      this.parentNode.classList.add("active");
+    });
+  });
+};
+
+const flyToFeature = (currentFeature) => {
+  map.flyTo({
+    center: currentFeature.geometry.coordinates,
+    zoom: 15,
+  });
+};
+
+const createPopUp = (currentFeature) => {
+  var popUps = document.getElementsByClassName("mapboxgl-popup");
+
+  /** Check if there is already a popup on the map and if so, remove it */
+  if (popUps[0]) popUps[0].remove();
+
+  var popup = new mapboxgl.Popup({
+    closeOnClick: false,
+    focusAfterOpen: false,
+    offset: 8,
+  })
+    .setLngLat(currentFeature.geometry.coordinates)
+    .setHTML(
+      `<img src=/img/popup/${currentFeature.properties.picture} alt=${currentFeature.properties.name}  />
+      <h3>${currentFeature.properties.name}</h3>
+        <p>${currentFeature.properties.short_description}</p>`
+    )
+    .addTo(map);
+};
