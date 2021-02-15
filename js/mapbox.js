@@ -87,7 +87,7 @@ const buildLocationList = (data) => {
     var details = listing.appendChild(document.createElement("div"));
     details.innerHTML = prop.long_description;
     if (prop.url) {
-      details.innerHTML += ` - <a href=${prop.url}>${prop.name}</a>`;
+      details.innerHTML += ` - <a href=${prop.url} target="_new" >${prop.name}</a>`;
     }
     link.addEventListener("click", function (e) {
       for (var i = 0; i < data.features.length; i++) {

@@ -80,7 +80,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         entry_id: 104,
-        url: "",
+        url: "http://marinapezvela.com",
         name: "Marina Pez Vela",
         modified_date: "2021/01/03",
         created_date: null,
@@ -98,7 +98,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         entry_id: 105,
-        url: "",
+        url: "https://goo.gl/maps/isLGVBBVxaLb1P8y7",
         name: "Playitas",
         modified_date: "2021/01/03",
         created_date: null,
