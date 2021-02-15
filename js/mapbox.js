@@ -1,4 +1,4 @@
-import { maFeatures } from "./ma-features.js";
+// import { maFeatures } from "./ma-features.js";
 
 mapboxgl.accessToken =
   "pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg";
