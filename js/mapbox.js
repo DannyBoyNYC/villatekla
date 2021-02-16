@@ -120,7 +120,7 @@ const createPopUp = (currentFeature) => {
   if (popUps[0]) popUps[0].remove();
 
   var popup = new mapboxgl.Popup({
-    closeOnClick: false,
+    closeOnClick: true,
     focusAfterOpen: false,
     offset: 8,
   })

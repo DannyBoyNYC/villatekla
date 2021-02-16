@@ -99,7 +99,7 @@ const maFeatures = {
         name: "Emilio's Cafe",
         short_description: "Not just a cafe, a small gem for dining.",
         long_description:
-          "Emilios is an solid choice in the foodie desert that is Manuel Antonio. The onsite bakery is good and the plates are way above average for the area.",
+          "Emilios is a solid choice in the foodie desert that is Manuel Antonio. The onsite bakery is good and the plates are way above average for the area.",
         picture: "emilios.jpg",
       },
       geometry: {
@@ -128,9 +128,9 @@ const maFeatures = {
       properties: {
         url: "",
         name: "Uvita Beach",
-        short_description: 'A unique "whaletail" beach',
+        short_description: 'A unique "whale tail" beach',
         long_description:
-          "Accessible at low tide, this unique beach offers a neighboring marine national park on a day trip that includes hipster Dominical, Nauyaca waterfalls and lunch at Punta Domenical. Check the tide charts before you go.",
+          "Accessible at low tide, this unique beach offers a neighboring marine national park on a day trip that includes hipster Dominical, Nauyaca waterfalls and lunch at Parcel's on Punta Dominical. Check the tide charts before you go.",
         picture: "uvita.jpg",
       },
       geometry: {
