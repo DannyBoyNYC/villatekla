@@ -4,11 +4,12 @@ const maFeatures = {
     {
       type: "Feature",
       properties: {
-        url: "http://villatekla.com",
+        url: "https://www.airbnb.com/rooms/2970784",
+        url_title: "We're on AirBnB!",
         name: "Villa Tekla",
         short_description: "A rainforest retreat on 5 hectares.",
         long_description:
-          "Available on AirBnB and VRBO, Villa Tekla is a three bedroom Spanish style villa with a private pool.",
+          "Situated on 5 hectares of verdant jungle, Villa Tekla is a three bedroom Spanish style villa with a private pool.",
         picture: "villatekla.jpg",
       },
       geometry: {
@@ -20,6 +21,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Quepos Farmer's Market",
         short_description: "Local produce and prepared foods.",
         long_description:
@@ -36,6 +38,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Barba Roja",
         short_description: "The oldest bar and restaurant in Manuel Antonio",
         long_description:
@@ -51,6 +54,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Biesanz Beach",
         short_description: "A quiet beach suitable for children.",
         long_description:
@@ -66,6 +70,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Parque Nahomi",
         short_description: "A local favorite a short walk from the marina",
         long_description:
@@ -81,6 +86,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "https://goo.gl/maps/isLGVBBVxaLb1P8y7",
+        url_title: "More pictures on Google Maps.",
         name: "Playitas",
         short_description: "The prefered portion of the main beach",
         long_description:
@@ -96,6 +102,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "https://goo.gl/maps/ZthiZyT2CBVe4McW9",
+        url_title: "No website yet, but here's some images.",
         name: "Emilio's Cafe",
         short_description: "Not just a cafe, a small gem for dining.",
         long_description:
@@ -112,6 +119,7 @@ const maFeatures = {
       properties: {
         url:
           "http://www.rainmakercostarica.org/index.php?option=com_content&task=view&id=16&Itemid=29",
+        url_title: "Their website.",
         name: "Rainmaker",
         short_description: "A private conservation project in the mountains.",
         long_description:
@@ -127,6 +135,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Uvita Beach",
         short_description: 'A unique "whale tail" beach',
         long_description:
@@ -142,6 +151,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "http://nauyacawaterfallscostarica.com",
+        url_title: "More information.",
         name: "Nauyaca Waterfalls",
         short_description: "Lovely falls with swimming and diving.",
         long_description:
@@ -157,6 +167,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Dominical",
         short_description:
           "A yoga, surfing and hipster haven just south of Quepos",
@@ -173,6 +184,7 @@ const maFeatures = {
       type: "Feature",
       properties: {
         url: "",
+        url_title: "",
         name: "Los Campesinos Ecolodge",
         short_description: "Waterfalls, hiking and swimming",
         long_description:

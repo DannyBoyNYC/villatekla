@@ -78,6 +78,7 @@ const buildLocationList = (data) => {
 
     /* Add the link to the individual listing created above. */
     let link = listing.appendChild(document.createElement("a"));
+
     link.href = "#";
     link.className = "title";
     link.id = "link-" + prop.id;
@@ -85,13 +86,23 @@ const buildLocationList = (data) => {
 
     /* Add details to the individual listing. */
     var details = listing.appendChild(document.createElement("div"));
+
     details.innerHTML = prop.long_description;
-    if (prop.url) {
-      details.innerHTML += ` - <a href=${prop.url} target="_new" >${prop.name}</a>`;
+    details.id = "link-" + prop.id;
+    details.className = "description";
+
+    if (prop.url_title) {
+      details.innerHTML += ` <a href=${prop.url} target="_new" >${prop.url_title}</a>`;
     }
-    link.addEventListener("click", function (e) {
+
+    /* both the paragraph and title link */
+    link.addEventListener("click", linkHandler);
+    details.addEventListener("click", linkHandler);
+
+    function linkHandler(e) {
       for (var i = 0; i < data.features.length; i++) {
         if (this.id === "link-" + data.features[i].properties.id) {
+          console.log("  ", this.id);
           var clickedListing = data.features[i];
           flyToFeature(clickedListing);
           createPopUp(clickedListing);
@@ -102,7 +113,7 @@ const buildLocationList = (data) => {
         activeItem[0].classList.remove("active");
       }
       this.parentNode.classList.add("active");
-    });
+    }
   });
 };
 
