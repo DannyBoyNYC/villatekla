@@ -169,5 +169,20 @@ const maFeatures = {
         coordinates: [-83.865, 9.25257],
       },
     },
+    {
+      type: "Feature",
+      properties: {
+        url: "",
+        name: "Los Campesinos Ecolodge",
+        short_description: "Waterfalls, hiking and swimming",
+        long_description:
+          "Walk to the Savegre river and back over a suspension bridge. Enjoy a swim in the river or one of the natural pools. A short drive from Quepos but watch the road in the rainy season.",
+        picture: "campesinos.jpg",
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [-84.00577, 9.45687],
+      },
+    },
   ],
 };
