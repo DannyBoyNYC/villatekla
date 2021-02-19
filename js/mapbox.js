@@ -92,7 +92,7 @@ const buildLocationList = (data) => {
     details.className = "description";
 
     if (prop.url_title) {
-      details.innerHTML += ` <a href=${prop.url} target="_new" >${prop.url_title}</a>`;
+      details.innerHTML += ` <a href=${prop.url} target="_new" rel="noreferrer" >${prop.url_title}</a>`;
     }
 
     /* both the paragraph and title link */
