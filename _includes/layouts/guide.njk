@@ -2,16 +2,12 @@
 <html lang="en" class="{{ pageClass }}">
   <head>
     {% include "gtag.njk" %}
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Villa Tekla - {{ pageTitle }}</title>
-    <script src="https://kit.fontawesome.com/fb7f6f30e4.js"></script>
-    <link rel="stylesheet" href="/css/styles.min.css" />
+    {% include "meta.njk" %}
 
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
-    <meta name="Description" content="Villa Tekla is a rental accommodation in Manuel Antonio Costa Rica."> 
+
   </head>
   <body>
 
