@@ -23,7 +23,8 @@ const maFeatures = {
         url: "",
         url_title: "",
         name: "Quepos Farmer's Market",
-        short_description: "Local produce and prepared foods.",
+        short_description:
+          "Local produce and prepared foods - fresh and cheap.",
         long_description:
           "Open Friday evening and all day Saturday, the farmers market is a fresher and cheaper alternative to Manuel Antonio's shopping.",
         picture: "quepos.jpg",
@@ -31,6 +32,23 @@ const maFeatures = {
       geometry: {
         type: "Point",
         coordinates: [-84.16517, 9.42969],
+      },
+    },
+    {
+      type: "Feature",
+      properties: {
+        url: "https://www.cafemilagro.com",
+        url_title: "Their website.",
+        name: "Milagro Coffee",
+        short_description:
+          "If you care about your morning coffee as much as we do.",
+        long_description:
+          "A small, independent roaster providing directly sourced premium, single origin, estate grown coffee. They also operate a restaurant near Barba Roja.",
+        picture: "milagro.jpg",
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [-84.16479, 9.43187],
       },
     },
 

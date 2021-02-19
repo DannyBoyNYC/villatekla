@@ -99,34 +99,6 @@
   background-color: #f3f3f3;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-  height: 3px;
-  border-left: 0;
-  // background: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-track {
-  background: none;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $green;
-  border-radius: 0;
-}
-
-.clearfix {
-  display: block;
-}
-
-.clearfix::after {
-  content: ".";
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
 /* Marker tweaks */
 button.mapboxgl-popup-close-button {
   top: -10px;

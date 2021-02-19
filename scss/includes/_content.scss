@@ -7,10 +7,10 @@ main {
   }
 }
 
-main img {
+main img.float {
   max-width: 300px;
   padding: 12px;
-  border-radius: 12px;
+  border-radius: 4%;
   @media (min-width: $bp-med) {
     float: right;
     max-width: 300px;
@@ -20,14 +20,18 @@ main img {
   }
 }
 
-.animation-container {
-  background-color: #111;
+main img.full {
+  border-radius: 4px;
+  float: none;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.animation-container {
+  background-color: #111;
 }
 
 .videos {
