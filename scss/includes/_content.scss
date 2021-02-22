@@ -14,9 +14,10 @@ main img.float {
   @media (min-width: $bp-med) {
     float: right;
     max-width: 300px;
-    padding: 12px;
-    margin-left: 2rem;
-    margin-bottom: 1rem;
+    padding: 12px 0 12px 12px;
+    // padding-left: 0;
+    // margin-left: 2rem;
+    // margin-bottom: 1rem;
   }
 }
 
