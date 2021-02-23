@@ -60,7 +60,21 @@
     text-align: center;
     font-family: $serif;
     font-style: italic;
-    padding: 0 20%;
+    padding: 0 12%;
+  }
+}
+
+.description {
+  font-size: 1rem;
+  margin: 0;
+  a::after {
+    content: "\f08e";
+    font-size: 0.75rem;
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    margin: 0px 0px 0px 2px;
+    text-decoration: none;
   }
 }
 

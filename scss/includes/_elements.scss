@@ -1,9 +1,3 @@
-// creates a bug in Chrome with floated image on home page
-// * {
-//   -webkit-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 3px;
@@ -34,7 +28,15 @@
 
 html {
   scroll-behavior: smooth;
+  // creates a bug in Chrome with floated image on home page
+  // box-sizing: border-box;
 }
+
+// *,
+// *:before,
+// *:after {
+//   box-sizing: inherit;
+// }
 
 @media screen and (prefers-reduced-motion: reduce) {
   html {
@@ -44,7 +46,8 @@ html {
 
 body {
   font-family: $body-text;
-  line-height: 1.5;
+  font-variant-ligatures: discretionary-ligatures;
+  line-height: 1.8;
   margin: 0;
   -webkit-font-smoothing: antialiased;
   background-color: #fff;
@@ -103,9 +106,42 @@ ul {
 
 blockquote {
   color: $blue;
-  font-family: Georgia, Cambria, Cochin, Times, "Times New Roman", serif;
+  font-family: $serif;
   font-style: italic;
-  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 1rem 0;
+  @media (min-width: $bp-med) {
+    margin: 1rem 40px;
+  }
+  p {
+    line-height: 1.4;
+    @media (min-width: $bp-med) {
+      font-size: 1.25rem;
+      text-indent: -2.5ex;
+    }
+  }
+}
+
+blockquote p:before,
+blockquote p:after {
+  content: "”";
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-family: $fancy-serif;
+  color: $green;
+  @media (min-width: $bp-med) {
+    font-size: 32px;
+  }
+}
+
+blockquote p:after {
+  content: "”";
+  line-height: 0.25;
+}
+
+blockquote p:before {
+  content: "“";
+  line-height: 1;
 }
 
 .active {

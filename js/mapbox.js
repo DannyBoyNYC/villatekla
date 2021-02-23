@@ -85,7 +85,7 @@ const buildLocationList = (data) => {
     link.innerHTML = prop.name;
 
     /* Add details to the individual listing. */
-    var details = listing.appendChild(document.createElement("div"));
+    var details = listing.appendChild(document.createElement("p"));
 
     details.innerHTML = prop.long_description;
     details.id = "link-" + prop.id;
