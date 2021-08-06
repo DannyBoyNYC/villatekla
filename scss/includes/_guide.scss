@@ -68,7 +68,8 @@
   font-size: 1rem;
   margin: 0;
   a::after {
-    content: "\f08e";
+    // content: "\f08e";
+    content: "\f0c9";
     font-size: 0.75rem;
     font-family: FontAwesome;
     font-weight: normal;

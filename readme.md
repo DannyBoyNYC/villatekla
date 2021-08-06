@@ -1,5 +1,7 @@
 # Villa Tekla - Public Site
 
+NOtE: quickfix for FAwesome on proton account
+
 A quick site to supplement information found on AirBnB and VRBO.
 
 Todo:
