@@ -2,11 +2,20 @@
   {%- if pageTitle == "Home" %}
   <header>
     <img alt="sunrise" src="/img/anim/1.jpg" class="active" />
-    <img alt="beach" src="/img/anim/2.jpg" />
+    {# <img alt="view of villa tekla from the front" src="/img/anim/2.jpg" /> #}
+    <img 
+    data-src="https://res.cloudinary.com/deedee/image/upload/v1633892637/Villa%20tekla/front-view.jpg" 
+    class="cld-responsive"
+    alt="view of villa tekla from the front"
+    >
     <img alt="rocks" src="/img/anim/3.jpg" />
     <img alt="sloths" src="/img/anim/4.jpg" />
     <img alt="sloths" src="/img/anim/5.jpg" />
-    <img alt="sloths" src="/img/anim/6.jpg" />
+        <img 
+    data-src="https://res.cloudinary.com/deedee/image/upload/v1633892636/Villa%20tekla/topdown.jpg" 
+    class="cld-responsive"
+    alt="view of villa tekla from the sky"
+    >
     <img alt="sloths" src="/img/anim/0.jpg" />
   </header>
   {%- endif %} {%- if pageTitle == "Hints" %}
@@ -45,3 +54,9 @@
   {%- endif %}
 
 </div>
+
+<script type="text/javascript">
+    var cl = cloudinary.Cloudinary.new({cloud_name: "deedee"}); 
+    // replace 'demo' with your cloud name in the line above 
+    cl.responsive();
+</script>
