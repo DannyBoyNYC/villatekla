@@ -3,6 +3,9 @@ permalink: "/"
 pageTitle: "Home"
 ---
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
 <h2 id="about">Privacy, Security, Nature, Convenience</h2>
 
 <p>
@@ -13,7 +16,6 @@ pageTitle: "Home"
   can easily accommodate three couples and is perfect for families traveling
   together.
 </p>
-<!-- <img class="float" src="/img/2020c/450x600/IMG_2550.jpg" alt="Monkeys" /> -->
 <p>
   Villa Tekla is completely private - although you might hear an occasional
   vehicle on the road, there are no visible neighbors. It feels as though you
@@ -66,6 +68,8 @@ pageTitle: "Home"
   >
   of Manuel Antonio National park.
 </p>
+
+<div id="panorama"></div>
 
 <p>
   Though at nine degrees latitude, the climate is benign, the temperature
@@ -138,3 +142,12 @@ pageTitle: "Home"
   allowfullscreen
   title="Villa Tekla monkey video"
 ></iframe>
+
+
+<script>
+  pannellum.viewer("panorama", {
+    type: "equirectangular",
+    panorama: "./img/vt.jpg",
+    autoLoad: true,
+  });
+</script>

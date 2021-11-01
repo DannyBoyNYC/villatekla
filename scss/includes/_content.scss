@@ -45,3 +45,11 @@ main img.full {
     height: 500px;
   }
 }
+
+#panorama {
+  max-width: 800px;
+  height: 240px;
+  @media (min-width: $bp-med) {
+    height: 600px;
+  }
+}
