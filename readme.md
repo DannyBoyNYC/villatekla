@@ -1,6 +1,6 @@
 # Villa Tekla - Public Site
 
-NOtE: quickfix for FAwesome on proton account
+Note: quickfix for FAwesome on proton account
 
 A quick site to supplement information found on AirBnB and VRBO.
 
@@ -27,13 +27,13 @@ https://github.com/locomotivemtl/locomotive-scroll
 https://css-tricks.com/how-to-stack-elements-in-css/
 
 ```
-    <!-- <li>
-        <a
-          href="https://www.airbnb.com/rooms/2970784?s=DbRU"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Villa Tekla on AirBnB
-        </a>
-      </li> -->
+<li>
+    <a
+      href="https://www.airbnb.com/rooms/2970784?s=DbRU"
+      target="_blank"
+      rel="noreferrer"
+    >
+      Villa Tekla on AirBnB
+    </a>
+</li>
 ```
