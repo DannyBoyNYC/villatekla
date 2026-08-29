@@ -1,10 +1,17 @@
 // import { maFeatures } from "./ma-features.js";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiZGFzdWxpdCIsImEiOiJjaXQzYmFjYmkwdWQ5MnBwZzEzZnNub2hhIn0.EDJ-lIfX2FnKhPw3nqHcqg";
+const mapboxToken = window.MAPBOX_ACCESS_TOKEN || "";
+
+if (!mapboxToken) {
+  console.error(
+    "Mapbox access token is missing. Set window.MAPBOX_ACCESS_TOKEN in the page before loading /js/mapbox.js.",
+  );
+} else {
+  mapboxgl.accessToken = mapboxToken;
+}
 
 /* Assign a unique ID to each store */
-maFeatures.features.forEach(function (feature, i) {
+maFeatures.features.forEach((feature, i) => {
   feature.properties.id = i;
 });
 
@@ -30,7 +37,7 @@ map.on("load", () => {
 });
 
 const addMarkers = () => {
-  maFeatures.features.forEach(function (marker) {
+  maFeatures.features.forEach((marker) => {
     /* Create a div element for the marker. */
     const el = document.createElement("div");
     /* Assign a unique `id` to the marker. */
@@ -48,7 +55,7 @@ const addMarkers = () => {
       .setLngLat(marker.geometry.coordinates)
       .addTo(map);
 
-    el.addEventListener("click", function (e) {
+    el.addEventListener("click", (e) => {
       /* Fly to the point */
       flyToFeature(marker);
       /* Close all other popups and display popup for clicked feature */
@@ -100,10 +107,11 @@ const buildLocationList = (data) => {
     details.addEventListener("click", linkHandler);
 
     function linkHandler(e) {
+      let clickedListing;
       for (var i = 0; i < data.features.length; i++) {
         if (this.id === "link-" + data.features[i].properties.id) {
           console.log("  ", this.id);
-          var clickedListing = data.features[i];
+          clickedListing = data.features[i];
           flyToFeature(clickedListing);
           createPopUp(clickedListing);
         }
@@ -139,7 +147,7 @@ const createPopUp = (currentFeature) => {
     .setHTML(
       `<img src=/img/popup/${currentFeature.properties.picture} alt=${currentFeature.properties.name}  />
       <h3>${currentFeature.properties.name}</h3>
-        <p>${currentFeature.properties.short_description}</p>`
+        <p>${currentFeature.properties.short_description}</p>`,
     )
     .addTo(map);
 };

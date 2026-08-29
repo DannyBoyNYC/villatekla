@@ -1,0 +1,32 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.11/schema.json",
+  "files": {
+    "includes": [
+      "js/**/*.js",
+      ".eleventy.js",
+      "biome.json",
+      "!**/_site/**",
+      "!**/*.html",
+      "!**/*.css"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "none",
+      "a11y": "off",
+      "complexity": "off",
+      "correctness": "off",
+      "nursery": "off",
+      "performance": "off",
+      "security": "off",
+      "style": "off",
+      "suspicious": "off"
+    }
+  }
+}

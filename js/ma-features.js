@@ -135,8 +135,7 @@ const maFeatures = {
     {
       type: "Feature",
       properties: {
-        url:
-          "http://www.rainmakercostarica.org/index.php?option=com_content&task=view&id=16&Itemid=29",
+        url: "http://www.rainmakercostarica.org/index.php?option=com_content&task=view&id=16&Itemid=29",
         url_title: "Their website.",
         name: "Rainmaker",
         short_description: "A private conservation project in the mountains.",
