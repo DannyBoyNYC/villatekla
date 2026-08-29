@@ -197,6 +197,25 @@ const maFeatures = {
         coordinates: [-83.865, 9.25257],
       },
     },
+
+    // 9.223506773550383, -83.84290870230019
+    {
+      type: "Feature",
+      properties: {
+        url: "https://www.laparcelacr.com/en/",
+        url_title: "",
+        name: "La Parcela",
+        short_description:
+          "A local fish restaurant with a great view of the ocean and beach.",
+        long_description:
+          "A short hop from Domenical, La Parcela is a local fish restaurant with a great view of the ocean and beach. The food is fresh and the portions are generous.",
+        picture: "domenical.jpg",
+      },
+      geometry: {
+        type: "Point",
+        coordinates: [-83.8429, 9.2235],
+      },
+    },
     {
       type: "Feature",
       properties: {

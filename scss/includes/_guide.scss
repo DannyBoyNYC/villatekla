@@ -1,3 +1,5 @@
+@use "variables" as *;
+
 .marker {
   background-image: url("vt-icon.png");
   background-size: cover;
@@ -116,11 +118,15 @@
 
 /* Marker tweaks */
 button.mapboxgl-popup-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
   top: -10px;
   right: -10px;
   width: 22px;
   height: 22px;
-  line-height: 22px;
+  // line-height: 22px;
   text-align: center;
   font-size: 1rem;
   border-radius: 22px;

@@ -1,5 +1,8 @@
+@use "variables" as *;
+
 form[name="contact"] {
   padding-bottom: 6rem;
+
   input,
   textarea {
     display: block;
