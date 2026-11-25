@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^3.1.2",
-    "@biomejs/biome": "^2.5.11",
-    "dotenv": "^17.4.2",
-    "sass": "^1.97.3"
+    "@11ty/eleventy": "^3.1.8",
+    "@biomejs/biome": "^2.6.9",
+    "dotenv": "^18.0.10",
+    "sass": "^1.108.2"
   }
 }
